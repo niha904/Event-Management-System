@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ocean Events</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <span class="logo">🌊</span>
+        <strong>Ocean Events</strong>
+      </div>
+
+      <span class="header-text"> Full-Stack Event & Attendee Management </span>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-content">
+          <small class="hero-tag"> ✦ DIVE INTO YOUR NEXT EVENT </small>
+
+          <h1>
+            Plan. Register.
+            <br />
+            <i>Make Waves.</i>
+          </h1>
+
+          <p>
+            Create unforgettable events, manage attendees, track available seats
+            and handle everything in one place.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#create-event" class="hero-btn"> Create Event ↓ </a>
+
+            <a href="#events" class="hero-link"> Explore Events </a>
+          </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+          <div class="stat-box">
+            <span class="stat-icon">📅</span>
+            <strong id="eventCount">0</strong>
+            <small>Events</small>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-icon">👥</span>
+            <strong id="attendeeCount">0</strong>
+            <small>Attendees</small>
+          </div>
+
+          <div class="stat-box">
+            <span class="stat-icon">🎟️</span>
+            <strong id="seatCount">0</strong>
+            <small>Seats Left</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Message / Alert -->
+      <div id="msg" role="alert"></div>
+
+      <!-- Forms -->
+      <div class="cols">
+        <!-- Create Event -->
+        <section class="card" id="create-event">
+          <div class="card-heading">
+            <div class="icon-circle">📅</div>
+
+            <div>
+              <h2>Create Event</h2>
+              <p>Set up your next ocean adventure.</p>
+            </div>
+          </div>
+
+          <form id="eventForm">
+            <label for="eventName"> Event Name </label>
+
+            <input
+              id="eventName"
+              type="text"
+              placeholder="e.g. Beach Cleanup Drive"
+              required
+            />
+
+            <label for="eventDate"> Event Date </label>
+
+            <input id="eventDate" type="date" required />
+
+            <label for="eventVenue"> Venue </label>
+
+            <input
+              id="eventVenue"
+              type="text"
+              placeholder="e.g. Ocean View Beach"
+              required
+            />
+
+            <label for="eventCapacity"> Maximum Capacity </label>
+
+            <input
+              id="eventCapacity"
+              type="number"
+              min="1"
+              placeholder="e.g. 100"
+              required
+            />
+
+            <button type="submit">🌊 Create Event</button>
+          </form>
+        </section>
+
+        <!-- Register Attendee -->
+        <section class="card">
+          <div class="card-heading">
+            <div class="icon-circle">🎟️</div>
+
+            <div>
+              <h2>Register Attendee</h2>
+              <p>Reserve a seat for your guest.</p>
+            </div>
+          </div>
+
+          <form id="attendeeForm">
+            <label for="eventSelect"> Select Event </label>
+
+            <select id="eventSelect" required>
+              <option value="">Select available event</option>
+            </select>
+
+            <label for="attendeeName"> Attendee Name </label>
+
+            <input
+              id="attendeeName"
+              type="text"
+              placeholder="Enter full name"
+              required
+            />
+
+            <label for="attendeeEmail"> Email Address </label>
+
+            <input
+              id="attendeeEmail"
+              type="email"
+              placeholder="example@email.com"
+              required
+            />
+
+            <label for="ticketType"> Ticket Type </label>
+
+            <select id="ticketType" required>
+              <option value="Regular">🎫 Regular</option>
+
+              <option value="VIP">⭐ VIP</option>
+
+              <option value="Student">🎓 Student</option>
+            </select>
+
+            <button type="submit">🎟️ Register Attendee</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Available Events -->
+      <section class="card" id="events">
+        <div class="bar">
+          <div>
+            <h2>🌊 Available Events</h2>
+            <p class="section-subtitle">Discover and manage upcoming events.</p>
+          </div>
+
+          <input
+            id="eventSearch"
+            type="search"
+            placeholder="🔍 Search events..."
+            aria-label="Search events"
+          />
+        </div>
+
+        <div id="eventsGrid">
+          <!-- Events loaded dynamically -->
+        </div>
+      </section>
+
+      <!-- Attendees -->
+      <section class="card">
+        <div class="bar">
+          <div>
+            <h2>👥 Registered Attendees</h2>
+            <p class="section-subtitle">View and manage event registrations.</p>
+          </div>
+
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="🔍 Search name, email or event..."
+            aria-label="Search attendees"
+          />
+        </div>
+
+        <div id="attendeesList">
+          <!-- Attendees loaded dynamically -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wave">🌊</div>
+
+      <strong>Ocean Events</strong><br />
+
+      <small> Plan smarter. Register faster. Make waves. </small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
